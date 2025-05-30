@@ -1,0 +1,227 @@
+/* Fonts and base */
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8; /* light greyish */
+  color: #0a0a0a; /* black */
+  line-height: 1.6;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+/* Typing header */
+.typing-header {
+  font-size: 2rem;
+  text-align: center;
+  padding: 1.5rem;
+  color: #007c91; /* teal */
+  background-color: #cde7f0; /* sky blue light */
+  font-weight: 600;
+}
+
+#cursor {
+  display: inline-block;
+  color: #007c91;
+  font-weight: 700;
+  animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  0%, 50% {opacity: 1;}
+  51%, 100% {opacity: 0;}
+}
+
+/* Scroll button */
+.scroll-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #00838f; /* teal */
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+  z-index: 100;
+}
+
+.scroll-button:hover {
+  background-color: #005f66;
+}
+
+/* Navigation */
+header {
+  background-color: #004d59; /* dark teal/blackish */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.nav-link {
+  color: #cde7f0; /* sky blue */
+  margin: 0 1.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #00b3b3; /* bright teal */
+  outline: none;
+}
+
+/* Main sections */
+.section {
+  padding: 4rem 1.5rem;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+}
+
+.content-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: rgba(255,255,255,0.85);
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Background placeholders */
+/* Replace url() with actual image paths */
+.bg-about {
+  background: 
+    linear-gradient(rgba(0, 124, 145, 0.7), rgba(0, 124, 145, 0.7)),
+    url('/NEXH/Logo\ ultra.png') no-repeat center center/cover;
+  color: #e0f7fa; /* light teal text */
+}
+
+.bg-services {
+  background:
+    linear-gradient(rgba(0, 115, 136, 0.75), rgba(0, 115, 136, 0.75)),
+    url('/NEXH/Tech\ 2.jpeg') no-repeat center center/cover;
+  color: #cce7eb;
+}
+
+.bg-techstack {
+  background:
+    linear-gradient(rgba(2, 62, 74, 0.75), rgba(2, 62, 74, 0.75)),
+    url('/NEXH/Tech\ 1.jpeg') no-repeat center center/cover;
+  color: #a7d8db;
+}
+
+.bg-founder {
+  background:
+    linear-gradient(rgba(1, 82, 97, 0.8), rgba(1, 82, 97, 0.8)),
+    url('/NEXH/Greek\ Myth\ 3.jpeg') no-repeat center center/cover;
+  color: #b9e0e3;
+}
+
+/* Section headings */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #00b3b3; /* bright teal */
+  font-weight: 700;
+}
+
+/* Paragraph and list styling */
+p{
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #0a0a0a;
+}
+
+/* Lists styling */
+ul {
+  margin-left: 2rem;
+  padding-left: 0;
+  list-style-type: disc;
+  color: #003f47; /* Dark teal for bullets */
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+ul li {
+  margin-bottom: 0.8rem;
+  color: #0a0a0a; /* Text color black */
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+/* Custom bullet style using a teal dot */
+ul li::marker {
+  color: #00838f; /* teal */
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Optional: hover effect on list items */
+ul li:hover {
+  color: #007c91; /* Slightly brighter teal on hover */
+  cursor: default;
+}
+
+/* Nested lists with smaller bullet and indent */
+ul ul {
+  margin-left: 1.5rem;
+  list-style-type: circle;
+  color: #005f66;
+}
+
+ul ul li::marker {
+  color: #005f66;
+  font-size: 1rem;
+}
+
+/* Footer */
+.footer {
+  background-color: #002a30; /* very dark teal */
+  color: #88c6c7;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.footer a {
+  color: #00b3b3;
+  text-decoration: none;
+}
+
+.footer a:hover,
+.footer a:focus {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 1.5rem 1.5rem;
+  }
+  .nav-container {
+    flex-direction: column;
+  }
+  .nav-link {
+    margin: 0.5rem 0;
+  }
+}

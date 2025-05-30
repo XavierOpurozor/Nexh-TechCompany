@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NEXH Tech | Home</title>
+  <link rel="stylesheet" href="ultra-style.css"/>
+  <link rel="icon" href="/HTML/Personal Html/Favicon special ultra.png" type="image/png" />
+  <style>
+    /* Fonts and base */
+    @import url('https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8; /* light greyish */
+      color: #0a0a0a; /* black */
+      line-height: 1.6;
+      min-height: 100vh;
+      scroll-behavior: smooth;
+    }
+
+    /* Typing header */
+    .typing-header {
+      font-size: 2rem;
+      text-align: center;
+      padding: 1.5rem;
+      color: #007c91; /* teal */
+      background-color: #cde7f0; /* sky blue light */
+      font-weight: 600;
+    }
+
+    #cursor {
+      display: inline-block;
+      color: #007c91;
+      font-weight: 700;
+      animation: blink 1s steps(2, start) infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% {opacity: 1;}
+      51%, 100% {opacity: 0;}
+    }
+
+    /* Scroll button */
+    .scroll-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #00838f; /* teal */
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      z-index: 100;
+    }
+
+    .scroll-button:hover {
+      background-color: #005f66;
+    }
+
+    /* Navigation */
+    header {
+      background-color: #004d59; /* dark teal/blackish */
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .nav-link {
+      color: #cde7f0; /* sky blue */
+      margin: 0 1.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+      color: #00b3b3; /* bright teal */
+      outline: none;
+    }
+
+    /* Main sections */
+    .section {
+      padding: 4rem 1.5rem;
+      min-height: 350px;
+      display: flex;
+      align-items: center;
+    }
+
+    .content-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: rgba(255,255,255,0.85);
+      padding: 2rem 2.5rem;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    /* Background placeholders */
+    /* Replace url() with your images */
+    .bg-about {
+      background: 
+        linear-gradient(rgba(0, 124, 145, 0.7), rgba(0, 124, 145, 0.7)),
+        url('images/about-bg.jpg') no-repeat center center/cover;
+      color: #e0f7fa; /* light teal text */
+    }
+
+    .bg-services {
+      background:
+        linear-gradient(rgba(0, 115, 136, 0.75), rgba(0, 115, 136, 0.75)),
+        url('images/services-bg.jpg') no-repeat center center/cover;
+      color: #cce7eb;
+    }
+
+    .bg-techstack {
+      background:
+        linear-gradient(rgba(2, 62, 74, 0.75), rgba(2, 62, 74, 0.75)),
+        url('images/techstack-bg.jpg') no-repeat center center/cover;
+      color: #a7d8db;
+    }
+
+    .bg-founder {
+      background:
+        linear-gradient(rgba(1, 82, 97, 0.8), rgba(1, 82, 97, 0.8)),
+        url('images/founder-bg.jpg') no-repeat center center/cover;
+      color: #b9e0e3;
+    }
+
+    /* Section headings */
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #00b3b3; /* bright teal */
+      font-weight: 700;
+    }
+
+    /* Paragraph and list styling */
+    p, li {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #0a0a0a;
+    }
+
+    /* Lists styling */
+    ul {
+      margin-left: 2rem;
+      padding-left: 0;
+      list-style-type: disc;
+      color: #003f47; /* Dark teal for bullets */
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+
+    ul li {
+      margin-bottom: 0.8rem;
+      color: #0a0a0a; /* Text color black */
+      position: relative;
+      padding-left: 0.5rem;
+    }
+
+    ul li::marker {
+      color: #00838f; /* teal */
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    ul li:hover {
+      color: #007c91; /* Slightly brighter teal on hover */
+      cursor: default;
+    }
+
+    ul ul {
+      margin-left: 1.5rem;
+      list-style-type: circle;
+      color: #005f66;
+    }
+
+    ul ul li::marker {
+      color: #005f66;
+      font-size: 1rem;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #002a30; /* very dark teal */
+      color: #88c6c7;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .footer a {
+      color: #00b3b3;
+      text-decoration: none;
+    }
+
+    .footer a:hover,
+    .footer a:focus {
+      text-decoration: underline;
+    }
+
+    .overlay-img {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 1.5s ease, transform 1.5s ease;
+  }
+
+  .fade-out {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-30px);
+  }
+
+  #about {
+    position: relative;
+    padding: 4rem 2rem;
+  }
+  #services {
+    position: relative;
+    padding: 4rem 2rem;
+  }
+
+  #techstack {
+    position: relative;
+    padding: 4rem 2rem;
+  }
+  #contact {
+    position: relative;
+    padding: 4rem 2rem;
+  }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .content-wrapper {
+        padding: 1.5rem 1.5rem;
+      }
+      .nav-container {
+        flex-direction: column;
+      }
+      .nav-link {
+        margin: 0.5rem 0;
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <h1 class="typing-header">
+    <span id="typing-text"></span><span id="cursor">|</span>
+  </h1>
+
+  <button onclick="scrollToTop()" class="scroll-button">↑</button>
+
+  <script>
+    const text = "Welcome to NEXH — The Future of Connected Tech!";
+    let index = 0;
+    function typeText() {
+      if (index < text.length) {
+        document.getElementById("typing-text").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeText, 100);
+      }
+    }
+    typeText();
+
+    setInterval(() => {
+      const cursor = document.getElementById("cursor");
+      cursor.style.opacity = cursor.style.opacity === "0" ? "1" : "0";
+    }, 500);
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+     window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      const img = document.getElementById('about-img');
+      img.classList.add('fade-out');
+    }, 1000); // 3 seconds delay
+  });
+
+     window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      const img = document.getElementById('services-img');
+      img.classList.add('fade-out');
+    }, 3000); // 3 seconds delay
+  });
+
+   window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      const img = document.getElementById('techstack-img');
+      img.classList.add('fade-out');
+    }, 5000); // 3 seconds delay
+  });
+
+   window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      const img = document.getElementById('contact-img');
+      img.classList.add('fade-out');
+    }, 7000); // 3 seconds delay
+  });
+  </script>
+
+  <header>
+    <nav class="nav-container">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about" class="section about-section bg-about">
+      <!--<img src="/NEXH/Logo ultra.png" alt="Overlay Image" class="overlay-img" id="about-img" />
+    --><div class="content-wrapper">
+        <h2>📖 Our Story</h2>
+        <p><strong>NEXH</strong> was founded by Opurozor Xavier Naetochukwu to pioneer the future of cloud computing, AI integration, and scalable web infrastructure. With a passion for excellence and security, NEXH delivers modern digital ecosystems from concept to deployment.</p>
+      </div>
+    </section>
+
+    <section id="services" class="section services-section bg-services">
+     <!-- <img src="/NEXH/Tech 1.jpeg" alt="Overlay Image" class="overlay-img" id="services-img" />
+     --> <div class="content-wrapper">
+        <h2>💼 What We Do</h2>
+        <p>NEXH is a full-spectrum digital solutions company specializing in merging advanced technologies into seamless experiences for businesses and users. Our services include:</p>
+        <ul>
+          <li><strong>Frontend Engineering:</strong> We build responsive, performant, and stunning UIs with React, Next.js, and Tailwind CSS, ensuring a beautiful user experience across all devices.</li>
+          <li><strong>Backend Development:</strong> Our APIs and microservices are crafted using FastAPI, Node.js, and Express with secure databases like PostgreSQL and MongoDB.</li>
+          <li><strong>DevOps & Cloud Deployment:</strong> We automate and scale infrastructure using Docker, GitHub Actions, Netlify, and Vercel—backed by efficient CI/CD pipelines.</li>
+          <li><strong>AI & Integration:</strong> From OpenAI-powered interfaces to intelligent data flows and chatbots, we embed AI into modern web apps to supercharge productivity and automation.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="techstack" class="section techstack-section bg-techstack">
+     <!-- <img src="/NEXH/Tech 2.jpeg" alt="Overlay Image" class="overlay-img" id="techstack-img" />
+     --> <div class="content-wrapper">
+        <h2>🚀 Tech Stack Highlights</h2>
+        <ul>
+          <li>⚛️ React 18 + Vite for lightning-fast frontends</li>
+          <li>🎨 Tailwind CSS for rapid, scalable styling</li>
+          <li>🧠 OpenAI API and automation frameworks</li>
+          <li>🔐 JWT-based secure auth and OAuth 2.0</li>
+          <li>🗃️ PostgreSQL & MongoDB for versatile data storage</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section founder-section bg-founder" id="contact">
+     <!-- <img src="/NEXH/Greek Myth 3.jpeg" alt="Overlay Image" class="overlay-img" id="contact-img" />
+     --> <div class="content-wrapper">
+        <h2>🧑‍💼 About the Founder</h2>
+        <p><strong>Opurozor Xavier Naetochukwu</strong> is a visionary full-stack developer and cloud architect based in Lagos, Nigeria. He has dedicated his career to building tools and platforms that combine performance with precision, always pushing the boundaries of web technology. Through NEXH, Xavier leads a mission-driven company that prioritizes innovation, security, and impact.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 NEXH — Founded by Opurozor Xavier Naetochukwu. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
