@@ -7,8 +7,7 @@
   <link rel="stylesheet" href="ultra-style.css"/>
   <link rel="icon" href="Favicon special ultra.png" type="image/png" />
   <style>
-    /* Fonts and base */
-    @import url('https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
     * {
       margin: 0;
@@ -17,22 +16,21 @@
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f0f4f8; /* light greyish */
-      color: #0a0a0a; /* black */
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fbfd;
+      color: #111;
       line-height: 1.6;
       min-height: 100vh;
       scroll-behavior: smooth;
     }
 
-    /* Typing header */
     .typing-header {
-      font-size: 2rem;
+      font-size: 2.2rem;
       text-align: center;
-      padding: 1.5rem;
-      color: #007c91; /* teal */
-      background-color: #cde7f0; /* sky blue light */
-      font-weight: 600;
+      padding: 2rem 1rem;
+      color: #006b75;
+      background-color: #e0f7fa;
+      font-weight: 700;
     }
 
     #cursor {
@@ -43,35 +41,33 @@
     }
 
     @keyframes blink {
-      0%, 50% {opacity: 1;}
-      51%, 100% {opacity: 0;}
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
     }
 
-    /* Scroll button */
     .scroll-button {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: #00838f; /* teal */
+      bottom: 20px;
+      right: 20px;
+      background-color: #0097a7;
       border: none;
       color: white;
       font-size: 1.5rem;
-      padding: 0.5rem 1rem;
+      padding: 0.6rem 0.9rem;
       border-radius: 50%;
       cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
       transition: background-color 0.3s ease;
       z-index: 100;
     }
 
     .scroll-button:hover {
-      background-color: #005f66;
+      background-color: #007c91;
     }
 
-    /* Navigation */
     header {
-      background-color: #004d59; /* dark teal/blackish */
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      background-color: #003840;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
       position: sticky;
       top: 0;
       z-index: 10;
@@ -80,190 +76,143 @@
     .nav-container {
       display: flex;
       justify-content: center;
-      padding: 1rem;
+      gap: 2rem;
+      padding: 1.2rem;
     }
 
     .nav-link {
-      color: #cde7f0; /* sky blue */
-      margin: 0 1.5rem;
+      color: #e0f7fa;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
+      font-size: 1.05rem;
+      transition: color 0.3s ease, transform 0.2s ease;
     }
 
     .nav-link:hover,
     .nav-link:focus {
-      color: #00b3b3; /* bright teal */
-      outline: none;
+      color: #00e0e0;
+      transform: scale(1.05);
     }
 
-    /* Main sections */
     .section {
       padding: 4rem 1.5rem;
-      min-height: 350px;
       display: flex;
       align-items: center;
+      position: relative;
     }
 
     .content-wrapper {
       max-width: 900px;
-      margin: 0 auto;
-      background-color: rgba(255,255,255,0.85);
-      padding: 2rem 2.5rem;
-      border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      margin: auto;
+      background-color: rgba(255, 255, 255, 0.92);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     }
 
-    /* Background placeholders */
-    /* Replace url() with your images */
     .bg-about {
-      background: 
-        linear-gradient(rgba(0, 124, 145, 0.7), rgba(0, 124, 145, 0.7)),
-        url('images/about-bg.jpg') no-repeat center center/cover;
-      color: #e0f7fa; /* light teal text */
+      background: linear-gradient(rgba(0, 124, 145, 0.6), rgba(0, 124, 145, 0.6)),
+                  url('images/about-bg.jpg') no-repeat center center/cover;
+      color: #f0fdfd;
     }
 
     .bg-services {
-      background:
-        linear-gradient(rgba(0, 115, 136, 0.75), rgba(0, 115, 136, 0.75)),
-        url('images/services-bg.jpg') no-repeat center center/cover;
-      color: #cce7eb;
+      background: linear-gradient(rgba(0, 115, 136, 0.7), rgba(0, 115, 136, 0.7)),
+                  url('images/services-bg.jpg') no-repeat center center/cover;
+      color: #f1f9fa;
     }
 
     .bg-techstack {
-      background:
-        linear-gradient(rgba(2, 62, 74, 0.75), rgba(2, 62, 74, 0.75)),
-        url('images/techstack-bg.jpg') no-repeat center center/cover;
-      color: #a7d8db;
+      background: linear-gradient(rgba(2, 62, 74, 0.75), rgba(2, 62, 74, 0.75)),
+                  url('images/techstack-bg.jpg') no-repeat center center/cover;
+      color: #d6f2f4;
     }
 
     .bg-founder {
-      background:
-        linear-gradient(rgba(1, 82, 97, 0.8), rgba(1, 82, 97, 0.8)),
-        url('images/founder-bg.jpg') no-repeat center center/cover;
-      color: #b9e0e3;
+      background: linear-gradient(rgba(1, 82, 97, 0.75), rgba(1, 82, 97, 0.75)),
+                  url('images/founder-bg.jpg') no-repeat center center/cover;
+      color: #dbf4f6;
     }
 
-    /* Section headings */
     h2 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 1rem;
-      color: #00b3b3; /* bright teal */
+      color: #00c2c2;
       font-weight: 700;
     }
 
-    /* Paragraph and list styling */
     p, li {
       font-size: 1.1rem;
       margin-bottom: 1rem;
-      color: #0a0a0a;
+      color: #111;
     }
 
-    /* Lists styling */
     ul {
-      margin-left: 2rem;
-      padding-left: 0;
-      list-style-type: disc;
-      color: #003f47; /* Dark teal for bullets */
-      font-size: 1.15rem;
-      line-height: 1.6;
-    }
-
-    ul li {
-      margin-bottom: 0.8rem;
-      color: #0a0a0a; /* Text color black */
-      position: relative;
-      padding-left: 0.5rem;
+      list-style: disc;
+      padding-left: 1.5rem;
+      color: #03454f;
     }
 
     ul li::marker {
-      color: #00838f; /* teal */
-      font-weight: bold;
-      font-size: 1.2rem;
+      color: #00b3b3;
     }
 
     ul li:hover {
-      color: #007c91; /* Slightly brighter teal on hover */
-      cursor: default;
+      color: #007c91;
     }
 
     ul ul {
+      list-style: circle;
       margin-left: 1.5rem;
-      list-style-type: circle;
-      color: #005f66;
+      color: #00656e;
     }
 
-    ul ul li::marker {
-      color: #005f66;
-      font-size: 1rem;
-    }
-
-    /* Footer */
     .footer {
-      background-color: #002a30; /* very dark teal */
-      color: #88c6c7;
+      background-color: #002a30;
+      color: #a2dfe2;
       text-align: center;
-      padding: 1.5rem 1rem;
-      font-size: 0.9rem;
-      line-height: 1.4;
+      padding: 2rem 1rem;
+      font-size: 0.95rem;
     }
 
     .footer a {
-      color: #00b3b3;
+      color: #00c2c2;
       text-decoration: none;
     }
 
-    .footer a:hover,
-    .footer a:focus {
+    .footer a:hover {
       text-decoration: underline;
     }
 
     .overlay-img {
-    position: absolute;
-    top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 300px;
-    z-index: 10;
-    opacity: 1;
-    transition: opacity 1.5s ease, transform 1.5s ease;
-  }
+      position: absolute;
+      top: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      z-index: 10;
+      opacity: 1;
+      transition: opacity 1.5s ease, transform 1.5s ease;
+    }
 
-  .fade-out {
-    opacity: 0;
-    transform: translateX(-50%) translateY(-30px);
-  }
+    .fade-out {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-30px);
+    }
 
-  #about {
-    position: relative;
-    padding: 4rem 2rem;
-  }
-  #services {
-    position: relative;
-    padding: 4rem 2rem;
-  }
-
-  #techstack {
-    position: relative;
-    padding: 4rem 2rem;
-  }
-  #contact {
-    position: relative;
-    padding: 4rem 2rem;
-  }
-    /* Responsive */
     @media (max-width: 768px) {
-      .content-wrapper {
-        padding: 1.5rem 1.5rem;
-      }
       .nav-container {
         flex-direction: column;
-      }
-      .nav-link {
-        margin: 0.5rem 0;
+        gap: 1rem;
       }
 
+      .content-wrapper {
+        padding: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
@@ -295,33 +244,14 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-     window.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-      const img = document.getElementById('about-img');
-      img.classList.add('fade-out');
-    }, 1000); // 3 seconds delay
-  });
-
-     window.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-      const img = document.getElementById('services-img');
-      img.classList.add('fade-out');
-    }, 3000); // 3 seconds delay
-  });
-
-   window.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-      const img = document.getElementById('techstack-img');
-      img.classList.add('fade-out');
-    }, 5000); // 3 seconds delay
-  });
-
-   window.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-      const img = document.getElementById('contact-img');
-      img.classList.add('fade-out');
-    }, 7000); // 3 seconds delay
-  });
+    ['about-img', 'services-img', 'techstack-img', 'contact-img'].forEach((id, i) => {
+      window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+          const img = document.getElementById(id);
+          if (img) img.classList.add('fade-out');
+        }, (i + 1) * 2000);
+      });
+    });
   </script>
 
   <header>
@@ -333,17 +263,15 @@
   </header>
 
   <main>
-    <section id="about" class="section about-section bg-about">
-      <!--<img src="/NEXH/Logo ultra.png" alt="Overlay Image" class="overlay-img" id="about-img" />
-    --><div class="content-wrapper">
+    <section id="about" class="section bg-about">
+      <div class="content-wrapper">
         <h2>📖 Our Story</h2>
-        <p><strong>NEXH</strong> was founded by Opurozor Xavier Naetochukwu to pioneer the future of cloud computing, AI integration, and scalable web infrastructure. With a passion for excellence and security, NEXH delivers modern digital ecosystems from concept to deployment.</p>
+        <p><strong>NEXH</strong> was founded by Opurozor Xavier Naetochukwu to pioneer the future of cloud computing, AI integration, and scalable web infrastructure. With        a passion for excellence and security, NEXH delivers modern digital ecosystems from concept to deployment.</p>
       </div>
     </section>
 
-    <section id="services" class="section services-section bg-services">
-     <!-- <img src="/NEXH/Tech 1.jpeg" alt="Overlay Image" class="overlay-img" id="services-img" />
-     --> <div class="content-wrapper">
+    <section id="services" class="section bg-services">
+      <div class="content-wrapper">
         <h2>💼 What We Do</h2>
         <p>NEXH is a full-spectrum digital solutions company specializing in merging advanced technologies into seamless experiences for businesses and users. Our services include:</p>
         <ul>
@@ -355,9 +283,8 @@
       </div>
     </section>
 
-    <section id="techstack" class="section techstack-section bg-techstack">
-     <!-- <img src="/NEXH/Tech 2.jpeg" alt="Overlay Image" class="overlay-img" id="techstack-img" />
-     --> <div class="content-wrapper">
+    <section id="techstack" class="section bg-techstack">
+      <div class="content-wrapper">
         <h2>🚀 Tech Stack Highlights</h2>
         <ul>
           <li>⚛️ React 18 + Vite for lightning-fast frontends</li>
@@ -369,9 +296,8 @@
       </div>
     </section>
 
-    <section class="section founder-section bg-founder" id="contact">
-     <!-- <img src="/NEXH/Greek Myth 3.jpeg" alt="Overlay Image" class="overlay-img" id="contact-img" />
-     --> <div class="content-wrapper">
+    <section id="contact" class="section bg-founder">
+      <div class="content-wrapper">
         <h2>🧑‍💼 About the Founder</h2>
         <p><strong>Opurozor Xavier Naetochukwu</strong> is a visionary full-stack developer and cloud architect based in Lagos, Nigeria. He has dedicated his career to building tools and platforms that combine performance with precision, always pushing the boundaries of web technology. Through NEXH, Xavier leads a mission-driven company that prioritizes innovation, security, and impact.</p>
       </div>
