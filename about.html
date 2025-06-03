@@ -204,6 +204,9 @@
 
     ul ul li::marker {
       color: #005f66;
+     
+::contentReference[oaicite:0]{index=0}
+ 
       font-size: 1rem;
     }
 
@@ -227,45 +230,9 @@
       text-decoration: underline;
     }
 
-    .overlay-img {
-    position: absolute;
-    top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 300px;
-    z-index: 10;
-    opacity: 1;
-    transition: opacity 1.5s ease, transform 1.5s ease;
-  }
-
-  .fade-out {
-    opacity: 0;
-    transform: translateX(-50%) translateY(-30px);
-  }
-
-  #about {
-    position: relative;
-    padding: 4rem 2rem;
-  }
-  #services {
-    position: relative;
-    padding: 4rem 2rem;
-  }
-
-  #techstack {
-    position: relative;
-    padding: 4rem 2rem;
-  }
-  #contact {
-    position: relative;
-    padding: 4rem 2rem;
-  }
-    /* Responsive */
+    /* Responsive adjustments */
     @media (max-width: 768px) {
-      .content-wrapper {
-        padding: 1.5rem 1.5rem;
-      }
-      .other{
+      .content-wrapper, .other {
         padding: 1.5rem 1.5rem;
       }
       .nav-container {
@@ -274,27 +241,22 @@
       .nav-link {
         margin: 0.5rem 0;
       }
-
     }
   </style>
 </head>
 <body>
-<h1 class="typing-header">
+  <h1 class="typing-header">
     <span id="typing-text"></span><span id="cursor">|</span>
   </h1>
-<script>
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
 
-
-const text = "Welcome to NEXH Tech — About Page";
+  <script>
+    const text = "Welcome to NEXH Tech — About Page";
     let index = 0;
     function typeText() {
       if (index < text.length) {
         document.getElementById("typing-text").innerHTML += text.charAt(index);
         index++;
-        setTimeout(typeText, 100);
+        setTimeout(typeText, 90);
       }
     }
     typeText();
@@ -303,37 +265,61 @@ const text = "Welcome to NEXH Tech — About Page";
       const cursor = document.getElementById("cursor");
       cursor.style.opacity = cursor.style.opacity === "0" ? "1" : "0";
     }, 500);
-</script>
-<button onclick="scrollToTop()" class="scroll-button">↑</button>
-<header>
-  <div class="nav-container">
-    <a class="nav-link" href="index.html">Home</a>
-    <a class="nav-link" href="about.html">About</a>
-    <a class="nav-link" href="contact.html">Contact</a>
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  </script>
+
+  <button onclick="scrollToTop()" class="scroll-button">↑</button>
+
+  <header>
+    <div class="nav-container">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <section class="section bg-about" id="about">
+    <div class="content-wrapper">
+      <h2>About NEXH</h2>
+      <p class="other"><strong>NEXH</strong> was founded by Opurozor Xavier Naetochukwu with the vision of reshaping digital infrastructure through cutting-edge technologies. From cloud-native deployments to AI-enhanced systems, NEXH exists to build the future of intelligent platforms.</p>
+
+      <h2>Our Mission</h2>
+      <p class="other">To empower people and businesses through scalable, secure, and smart technology—built with care, performance, and forward-thinking design at its core.</p>
+
+      <h2>Why Choose NEXH?</h2>
+      <ul class="other">
+        <li>💡 Agile innovation cycles and continuous R&D</li>
+        <li>🔐 Built-in cybersecurity practices for peace of mind</li>
+        <li>🧠 Seamless AI integrations with practical benefits</li>
+        <li>🌐 Global infrastructure with high availability</li>
+        <li>🧩 Modular architecture for flexible scaling</li>
+      </ul>
+
+      <h2>What Sets Us Apart</h2>
+      <p class="other">Unlike traditional service providers, NEXH blends creativity and engineering to produce holistic solutions. We don't just deliver code—we design experiences, workflows, and digital ecosystems that drive real-world impact.</p>
+
+      <h2>Our Culture</h2>
+      <p class="other">NEXH champions a culture of transparency, collaboration, and learning. We value curiosity, creative problem-solving, and technical depth. Whether remote or in person, we foster a team-first mindset focused on delivering exceptional results.</p>
+
+      <h2>Our Technologies</h2>
+      <ul class="other">
+        <li>⚙️ Containerized deployments (Docker, Kubernetes)</li>
+        <li>📈 Analytics pipelines powered by AI/ML</li>
+        <li>🌩️ Multi-cloud architecture (AWS, GCP, Azure)</li>
+        <li>🧱 Infrastructure-as-Code using Terraform & CI/CD</li>
+        <li>🕸️ Real-time systems (WebSockets, GraphQL, SignalR)</li>
+      </ul>
+
+      <h2>The Vision Ahead</h2>
+      <p class="other">Looking forward, NEXH aims to expand into developer tooling, intelligent agent systems, and enterprise-grade AI assistants. We're not just building for today—we're architecting the technological future, responsibly and inclusively.</p>
+    </div>
+  </section>
+
+  <div class="footer">
+    &copy; 2025 NEXH Tech. Built by Opurozor Xavier Naetochukwu. All rights reserved.
   </div>
-</header>
-
-<section class="section bg-about" id="about">
-  <div class="content-wrapper">
-    <h2>About NEXH</h2>
-    <p class="other"><strong>NEXH</strong> is a visionary tech brand founded by Opurozor Xavier Naetochukwu. Our goal is to bridge imagination and engineering, providing reliable and future-ready tech solutions for users worldwide.</p>
-    
-    <h2 class="content-wrapper">Our Mission</h2>
-    <p class="other">To connect ideas and people through high-performing digital platforms powered by AI, cloud technologies, and secure infrastructure.</p>
-
-    <h2 class="content-wrapper">Why Choose NEXH?</h2>
-    <ul class="other">
-      <li>💡 Constant innovation and evolution</li>
-      <li>🔐 Security and scalability built into every system</li>
-      <li>🚀 Transparent, futuristic, and efficient approach to tech</li>
-    </ul>
-  </div>
-</section>
-
-<div class="footer">
-  &copy; 2025 NEXH Tech. Built by Opurozor Xavier. All rights reserved.
-</div>
-
 </body>
 </html>
- 
