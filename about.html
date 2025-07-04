@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>About | NEXH</title>
+  <title>About | NXH</title>
   <link rel="icon" href="Favicon special ultra.png" type="image/png" />
   <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
@@ -14,7 +14,6 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
 }
 
 body {
@@ -138,24 +137,6 @@ header {
   color: #f0fdfd;
 }
 
-.bg-services {
-  background: linear-gradient(rgba(0, 115, 136, 0.7), rgba(0, 115, 136, 0.7)),
-              url('images/services-bg.jpg') no-repeat center center/cover;
-  color: #f1f9fa;
-}
-
-.bg-techstack {
-  background: linear-gradient(rgba(2, 62, 74, 0.75), rgba(2, 62, 74, 0.75)),
-              url('images/techstack-bg.jpg') no-repeat center center/cover;
-  color: #d6f2f4;
-}
-
-.bg-founder {
-  background: linear-gradient(rgba(1, 82, 97, 0.75), rgba(1, 82, 97, 0.75)),
-              url('images/founder-bg.jpg') no-repeat center center/cover;
-  color: #dbf4f6;
-}
-
 /* TEXT + HEADINGS */
 h2 {
   font-size: 2.4rem;
@@ -191,20 +172,14 @@ ul ul {
   margin-left: 1.5rem;
   color: #00656e;
 }
+
 hr {
   border: none;
   height: 4px;
   width: 95%;
   margin: 4rem auto;
   border-radius: 4px;
-  background: linear-gradient(
-    90deg,
-    #00c2c2 0%,
-    #007c91 25%,
-    #004d59 50%,
-    #007c91 75%,
-    #00c2c2 100%
-  );
+  background: linear-gradient(90deg, #00c2c2 0%, #007c91 25%, #004d59 50%, #007c91 75%, #00c2c2 100%);
   box-shadow: 0 4px 12px rgba(0, 124, 145, 0.3);
   animation: moveGradient 6s linear infinite;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -216,17 +191,10 @@ hr:hover {
 }
 
 @keyframes moveGradient {
-  0% {
-    background-position: 0%;
-  }
-  100% {
-    background-position: 100%;
-  }
+  0% { background-position: 0%; }
+  100% { background-position: 100%; }
 }
 
-
-
-/* FOOTER */
 .footer {
   background-color: #002a30;
   color: #a2dfe2;
@@ -244,7 +212,6 @@ hr:hover {
   text-decoration: underline;
 }
 
-/* IMAGE OVERLAY */
 .overlay-img {
   position: absolute;
   top: 100px;
@@ -261,22 +228,18 @@ hr:hover {
   transform: translateX(-50%) translateY(-30px);
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
   .nav-container {
     flex-direction: column;
     gap: 1rem;
   }
-
   .content-wrapper {
     padding: 1.5rem;
   }
-
   h2 {
     font-size: 1.9rem;
   }
 }
-
 </style>
 </head>
 <body>
@@ -285,7 +248,7 @@ hr:hover {
   </h1>
 
   <script>
-    const text = "Welcome to NEXH — About Page";
+    const text = "Welcome to NXH — About Page";
     let index = 0;
     function typeText() {
       if (index < text.length) {
@@ -295,12 +258,10 @@ hr:hover {
       }
     }
     typeText();
-
     setInterval(() => {
       const cursor = document.getElementById("cursor");
       cursor.style.opacity = cursor.style.opacity === "0" ? "1" : "0";
     }, 500);
-
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -309,65 +270,63 @@ hr:hover {
   <button onclick="scrollToTop()" class="scroll-button">↑</button>
 
   <header>
-   <div class="nav-container">
-    <nav style="background-color: #004d59; padding: 15px; text-align: center;">
-  <a href="index.html" style="color: white; text-decoration: none; margin: 0 20px; font-weight: bold; display: inline-block;">
-    <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home" width="20" height="20" style="vertical-align: middle; margin-right: 5px;">
-    Home
-  </a>
-
-  <a href="about.html" style="color: white; text-decoration: none; margin: 0 20px; font-weight: bold; display: inline-block;">
-    <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="About" width="20" height="20" style="vertical-align: middle; margin-right: 5px;">
-    About
-  </a>
-
-  <a href="contact.html" style="color: white; text-decoration: none; margin: 0 20px; font-weight: bold; display: inline-block;">
-    <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Contact" width="20" height="20" style="vertical-align: middle; margin-right: 5px;">
-    Contact
-  </a>
-</nav>
-     </div>
+    <div class="nav-container">
+      <nav style="background-color: #004d59; padding: 15px; text-align: center;">
+        <a href="index.html" style="color: white; text-decoration: none; margin: 0 20px; font-weight: bold; display: inline-block;">
+          <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home" width="20" height="20" style="vertical-align: middle; margin-right: 5px;">
+          Home
+        </a>
+        <a href="about.html" style="color: white; text-decoration: none; margin: 0 20px; font-weight: bold; display: inline-block;">
+          <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="About" width="20" height="20" style="vertical-align: middle; margin-right: 5px;">
+          About
+        </a>
+        <a href="contact.html" style="color: white; text-decoration: none; margin: 0 20px; font-weight: bold; display: inline-block;">
+          <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Contact" width="20" height="20" style="vertical-align: middle; margin-right: 5px;">
+          Contact
+        </a>
+      </nav>
+    </div>
   </header>
 
   <section class="section bg-about" id="about">
     <div class="content-wrapper">
-      <h2>About NEXH</h2>
-      <p class="other"><strong>NEXH</strong> was founded by Opurozor Xavier Naetochukwu with the vision of reshaping digital infrastructure through cutting-edge technologies. From cloud-native deployments to AI-enhanced systems, NEXH exists to build the future of intelligent platforms.</p>
+      <h2>About NXH</h2>
+      <p class="other"><strong>NXH</strong> was founded by Opurozor Xavier Naetochukwu with the vision of reshaping digital infrastructure through cutting-edge technologies. From cloud-native deployments to AI-enhanced systems, NXH exists to build the future of intelligent platforms.</p>
       <hr>
       <h2>Our Mission</h2>
       <p class="other">To empower people and businesses through scalable, secure, and smart technology—built with care, performance, and forward-thinking design at its core.</p>
       <hr>
-      <h2>Why Choose NEXH?</h2>
+      <h2>Why Choose NXH?</h2>
       <ul class="other">
         <li>💡 Agile innovation cycles and continuous R&D</li>
         <li>🔐 Built-in cybersecurity practices for peace of mind</li>
         <li>🧠 Seamless AI integrations with practical benefits</li>
         <li>🌐 Global infrastructure with high availability</li>
-        <li>🧩 Modular architecture for flexible scaling</li>
+        <li>🧹 Modular architecture for flexible scaling</li>
       </ul>
       <hr>
       <h2>What Sets Us Apart</h2>
-      <p class="other">Unlike traditional service providers, NEXH blends creativity and engineering to produce holistic solutions. We don't just deliver code—we design experiences, workflows, and digital ecosystems that drive real-world impact.</p>
+      <p class="other">Unlike traditional service providers, NXH blends creativity and engineering to produce holistic solutions. We don't just deliver code—we design experiences, workflows, and digital ecosystems that drive real-world impact.</p>
       <hr>
       <h2>Our Culture</h2>
-      <p class="other">NEXH champions a culture of transparency, collaboration, and learning. We value curiosity, creative problem-solving, and technical depth. Whether remote or in person, we foster a team-first mindset focused on delivering exceptional results.</p>
+      <p class="other">NXH champions a culture of transparency, collaboration, and learning. We value curiosity, creative problem-solving, and technical depth. Whether remote or in person, we foster a team-first mindset focused on delivering exceptional results.</p>
       <hr>
       <h2>Our Technologies</h2>
       <ul class="other">
         <li>⚙️ Containerized deployments (Docker, Kubernetes)</li>
         <li>📈 Analytics pipelines powered by AI/ML</li>
-        <li>🌩️ Multi-cloud architecture (AWS, GCP, Azure)</li>
+        <li>☉️ Multi-cloud architecture (AWS, GCP, Azure)</li>
         <li>🧱 Infrastructure-as-Code using Terraform & CI/CD</li>
         <li>🕸️ Real-time systems (WebSockets, GraphQL, SignalR)</li>
       </ul>
       <hr>
       <h2>The Vision Ahead</h2>
-      <p class="other">Looking forward, NEXH aims to expand into developer tooling, intelligent agent systems, and enterprise-grade AI assistants. We're not just building for today—we're architecting the technological future, responsibly and inclusively.</p>
+      <p class="other">Looking forward, NXH aims to expand into developer tooling, intelligent agent systems, and enterprise-grade AI assistants. We're not just building for today—we're architecting the technological future, responsibly and inclusively.</p>
     </div>
   </section>
 
   <div class="footer">
-    &copy; 2025 NEXH. Built by Opurozor Xavier Naetochukwu. All rights reserved.
+    &copy; 2025 NXH. Built by Opurozor Xavier Naetochukwu. All rights reserved.
   </div>
 </body>
 </html>
