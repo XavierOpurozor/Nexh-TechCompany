@@ -18,8 +18,8 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #f8fbfd;
-  color: #111;
+  background-color: #0f1b24;
+  color: #d4faff;
   line-height: 1.7;
   min-height: 100vh;
 }
@@ -29,20 +29,20 @@ body {
   font-size: 2.4rem;
   text-align: center;
   padding: 2.5rem 1rem;
-  color: #006b75;
-  background-color: #e0f7fa;
+  color: #00f5ff;
+  background-color: #072227;
   font-weight: 700;
   animation: fadeIn 1.5s ease-in-out;
+  text-shadow: 0 0 8px #00f5ff;
 }
 
 #cursor {
   display: inline-block;
-  color: #007c91;
+  color: #00f5ff;
   font-weight: 700;
   animation: blink 1s steps(2, start) infinite;
 }
 
-/* KEYFRAMES */
 @keyframes blink {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
@@ -53,32 +53,31 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* SCROLL BUTTON */
 .scroll-button {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #0097a7;
+  background-color: #00aaff;
   border: none;
   color: white;
   font-size: 1.6rem;
   padding: 0.7rem 1rem;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px #00f5ff;
   transition: background-color 0.3s ease, transform 0.3s ease;
   z-index: 100;
 }
 
 .scroll-button:hover {
-  background-color: #007c91;
+  background-color: #00f5ff;
   transform: scale(1.1);
+  color: #000;
 }
 
-/* HEADER + NAV */
 header {
-  background-color: #004d59;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  background-color: #01151f;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -93,7 +92,7 @@ header {
 }
 
 .nav-link {
-  color: #e0f7fa;
+  color: #00f5ff;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
@@ -102,11 +101,10 @@ header {
 
 .nav-link:hover,
 .nav-link:focus {
-  color: #00e0e0;
+  color: #00ffff;
   transform: scale(1.08);
 }
 
-/* SECTIONS */
 .section {
   padding: 5rem 2rem;
   display: flex;
@@ -115,14 +113,13 @@ header {
   position: relative;
 }
 
-/* WRAPPER */
 .content-wrapper {
   max-width: 950px;
   margin: auto;
-  background-color: rgba(255, 255, 255, 0.96);
+  background-color: rgba(8, 22, 33, 0.98);
   padding: 2.5rem;
   border-radius: 14px;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+  box-shadow: 0 0 28px rgba(0,255,255,0.2);
   transition: transform 0.3s ease;
 }
 
@@ -130,47 +127,46 @@ header {
   transform: scale(1.01);
 }
 
-/* BACKGROUNDS */
 .bg-about {
-  background: linear-gradient(rgba(0, 124, 145, 0.6), rgba(0, 124, 145, 0.6)),
+  background: linear-gradient(rgba(0, 255, 255, 0.15), rgba(0, 255, 255, 0.1)),
               url('images/about-bg.jpg') no-repeat center center/cover;
-  color: #f0fdfd;
+  color: #d4faff;
 }
 
-/* TEXT + HEADINGS */
 h2 {
   font-size: 2.4rem;
   margin-bottom: 1rem;
-  color: #00c2c2;
+  color: #00eaea;
   font-weight: 700;
-  border-left: 4px solid #00b3b3;
+  border-left: 4px solid #00b3ff;
   padding-left: 10px;
+  text-shadow: 0 0 8px #00f5ff;
 }
 
 p, li {
   font-size: 1.15rem;
   margin-bottom: 1.2rem;
-  color: #111;
+  color: #c1f6ff;
 }
 
 ul {
   list-style: disc;
   padding-left: 1.8rem;
-  color: #03454f;
+  color: #6ee9ff;
 }
 
 ul li::marker {
-  color: #00b3b3;
+  color: #00f5ff;
 }
 
 ul li:hover {
-  color: #007c91;
+  color: #00b3ff;
 }
 
 ul ul {
   list-style: circle;
   margin-left: 1.5rem;
-  color: #00656e;
+  color: #4ddcff;
 }
 
 hr {
@@ -179,15 +175,15 @@ hr {
   width: 95%;
   margin: 4rem auto;
   border-radius: 4px;
-  background: linear-gradient(90deg, #00c2c2 0%, #007c91 25%, #004d59 50%, #007c91 75%, #00c2c2 100%);
-  box-shadow: 0 4px 12px rgba(0, 124, 145, 0.3);
+  background: linear-gradient(90deg, #00f5ff 0%, #00aaff 25%, #007c91 50%, #00aaff 75%, #00f5ff 100%);
+  box-shadow: 0 4px 12px rgba(0, 224, 255, 0.4);
   animation: moveGradient 6s linear infinite;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 hr:hover {
   transform: scale(1.02);
-  box-shadow: 0 6px 18px rgba(0, 224, 224, 0.5);
+  box-shadow: 0 6px 18px rgba(0, 224, 255, 0.6);
 }
 
 @keyframes moveGradient {
@@ -196,15 +192,15 @@ hr:hover {
 }
 
 .footer {
-  background-color: #002a30;
-  color: #a2dfe2;
+  background-color: #01151f;
+  color: #9ee9f0;
   text-align: center;
   padding: 2.5rem 1rem;
   font-size: 1rem;
 }
 
 .footer a {
-  color: #00c2c2;
+  color: #00f5ff;
   text-decoration: none;
 }
 
