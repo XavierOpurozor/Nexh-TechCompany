@@ -9,18 +9,25 @@
   <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
+:root {
+  --nxh-primary: #00f0ff;
+  --nxh-secondary: #00b3b3;
+  --nxh-dark: #002a30;
+  --nxh-light: #e0f7fa;
+  --nxh-glow: #00ffff;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: #f8fbfd;
-  color: #111;
+  background-color: #000e12;
+  color: var(--nxh-light);
   line-height: 1.7;
   min-height: 100vh;
 }
@@ -29,15 +36,15 @@ body {
   font-size: 2.4rem;
   text-align: center;
   padding: 2.5rem 1rem;
-  color: #006b75;
-  background-color: #e0f7fa;
+  color: var(--nxh-glow);
+  background-color: #001f24;
   font-weight: 700;
   animation: fadeIn 1.5s ease-in-out;
 }
 
 #cursor {
   display: inline-block;
-  color: #007c91;
+  color: var(--nxh-glow);
   font-weight: 700;
   animation: blink 1s steps(2, start) infinite;
 }
@@ -56,26 +63,26 @@ body {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #0097a7;
+  background-color: var(--nxh-secondary);
   border: none;
   color: white;
   font-size: 1.6rem;
   padding: 0.7rem 1rem;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 15px rgba(0,255,255,0.4);
   transition: background-color 0.3s ease, transform 0.3s ease;
   z-index: 100;
 }
 
 .scroll-button:hover {
-  background-color: #007c91;
+  background-color: var(--nxh-primary);
   transform: scale(1.1);
 }
 
 header {
-  background-color: #004d59;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  background-color: #001d20;
+  box-shadow: 0 4px 10px rgba(0,255,255,0.1);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -89,7 +96,7 @@ header {
 }
 
 .nav-link {
-  color: #e0f7fa;
+  color: var(--nxh-light);
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
@@ -98,7 +105,7 @@ header {
 
 .nav-link:hover,
 .nav-link:focus {
-  color: #00e0e0;
+  color: var(--nxh-primary);
   transform: scale(1.08);
 }
 
@@ -112,10 +119,10 @@ header {
 .content-wrapper {
   max-width: 900px;
   margin: auto;
-  background-color: rgba(255, 255, 255, 0.96);
+  background-color: rgba(0, 30, 36, 0.8);
   padding: 2.5rem;
   border-radius: 14px;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+  box-shadow: 0 12px 28px rgba(0,255,255,0.1);
   transition: transform 0.3s ease;
 }
 
@@ -123,73 +130,58 @@ header {
   transform: scale(1.01);
 }
 
-.bg-about {
-  background: linear-gradient(rgba(0, 124, 145, 0.6), rgba(0, 124, 145, 0.6)),
-              url('images/about-bg.jpg') no-repeat center center/cover;
-  color: #f0fdfd;
-}
-
-.bg-services {
-  background: linear-gradient(rgba(0, 115, 136, 0.7), rgba(0, 115, 136, 0.7)),
-              url('images/services-bg.jpg') no-repeat center center/cover;
-  color: #f1f9fa;
-}
-
-.bg-techstack {
-  background: linear-gradient(rgba(2, 62, 74, 0.75), rgba(2, 62, 74, 0.75)),
-              url('images/techstack-bg.jpg') no-repeat center center/cover;
-  color: #d6f2f4;
-}
-
+.bg-about,
+.bg-services,
+.bg-techstack,
 .bg-founder {
-  background: linear-gradient(rgba(1, 82, 97, 0.75), rgba(1, 82, 97, 0.75)),
-              url('images/founder-bg.jpg') no-repeat center center/cover;
-  color: #dbf4f6;
+  background-color: #00181c;
+  background-blend-mode: overlay;
+  color: var(--nxh-light);
 }
 
 h2 {
   font-size: 2.4rem;
   margin-bottom: 1rem;
-  color: #00c2c2;
+  color: var(--nxh-primary);
   font-weight: 700;
 }
 
 p, li {
   font-size: 1.15rem;
   margin-bottom: 1.2rem;
-  color: #111;
+  color: var(--nxh-light);
 }
 
 ul {
   list-style: disc;
   padding-left: 1.8rem;
-  color: #03454f;
+  color: var(--nxh-glow);
 }
 
 ul li::marker {
-  color: #00b3b3;
+  color: var(--nxh-primary);
 }
 
 ul li:hover {
-  color: #007c91;
+  color: var(--nxh-glow);
 }
 
 ul ul {
   list-style: circle;
   margin-left: 1.5rem;
-  color: #00656e;
+  color: var(--nxh-secondary);
 }
 
 .footer {
-  background-color: #002a30;
-  color: #a2dfe2;
+  background-color: var(--nxh-dark);
+  color: var(--nxh-light);
   text-align: center;
   padding: 2.5rem 1rem;
   font-size: 1rem;
 }
 
 .footer a {
-  color: #00c2c2;
+  color: var(--nxh-primary);
   text-decoration: none;
 }
 
