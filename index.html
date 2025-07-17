@@ -87,7 +87,31 @@ header {
   top: 0;
   z-index: 10;
 }
+nav a {
+  color: #58a6ff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  position: relative;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
 
+/* Glow and Hover Effects */
+nav a:hover {
+  color: #00b4d8;
+  transform: scale(1.05);
+  text-shadow: 0 0 8px #58a6ff, 0 0 15px #58a6ff;
+}
+
+nav a::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: #00b4d8;
+  transition: width 0.3s ease;
+  margin: auto;
+}
 .nav-container {
   display: flex;
   justify-content: center;
